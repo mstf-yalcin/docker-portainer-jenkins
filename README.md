@@ -30,6 +30,7 @@ volumes:
 ```
 ## Creating a Dockerfile for Jenkins
 Docker-in-Docker (DinD) refers to running Docker inside a Docker container. This allows running a Docker daemon within a container and using this daemon to create, run, and manage Docker containers. DinD is useful for scenarios where there is a need to use Docker inside containers, such as in development and testing environments.
+https://www.jenkins.io/doc/book/installing/docker/
 ```dockerfile
 FROM jenkins/jenkins 
 
