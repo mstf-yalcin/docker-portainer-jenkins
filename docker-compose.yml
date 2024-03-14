@@ -1,0 +1,25 @@
+services:
+  portainer:
+    container_name: portainer
+    image: portainer/portainer-ce
+    ports:
+      - 9000:9000
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - portainer_volume:/data
+  jenkins:
+    container_name: jenkins
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - jenkins_volume:/var/jenkins_home
+   
+volumes:
+  portainer_volume:
+  jenkins_volume:
+
+
